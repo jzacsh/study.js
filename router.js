@@ -1,4 +1,4 @@
-var handlers = require('views.js').handlers;
+var handlers = require('./views.js').handlers;
 
 var responder = function(res, path, http_POST) {
     if (typeof handlers[path] === 'function') {

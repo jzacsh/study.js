@@ -1,4 +1,4 @@
-options = {
+var options = {
     server: {
         port: 8888,
     },
@@ -13,8 +13,9 @@ options = {
 
 //place everything in the global exported space:
 var exporter = function(imp, exp) {
+    //@TODO: figure out how to do this - this is borked.
     var key;
     for (key in imp) {
-        exp[key] = imp[child];
+        exp[key] = imp[key];
     }
 }(options, exports);
