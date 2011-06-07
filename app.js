@@ -33,7 +33,21 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express'
+    title: 'Flash Cards, Node.js &ndash; Powered'
+  });
+});
+
+app.get('/users', function(req, res) {
+  var users = [
+    { name: 'bob', email: 'bob@bob.com' },
+    { name: 'tom', email: 'tom@tom.com' },
+    { name: 'jon', email: 'jon@jon.com' },
+    { name: 'drew', email: 'drew@drew.com' },
+  ];
+
+  res.render('users', {
+    title: 'Users',
+    users: users,
   });
 });
 
