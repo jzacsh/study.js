@@ -44,10 +44,17 @@ var users = [
     { name: 'drew', email: 'drew@drew.com' },
 ];
 
-  res.render('users', {
-    title: 'Users',
-    users: users,
-  });
+app.get('/users', function(req, res) {
+    res.render('users', {
+        title: 'Users',
+        users: users,
+    });
+});
+
+app.get('/users/:id', function(req, res, next) {
+    console.log(req.params);
+//  users.find(req.params.id, function(err, user) {
+//  });
 });
 
 app.listen(3000);
