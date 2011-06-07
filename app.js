@@ -37,7 +37,7 @@ app.get('/', function(req, res){
   });
 });
 
-var users = [
+var Users = [
     { name: 'bob', email: 'bob@bob.com' },
     { name: 'tom', email: 'tom@tom.com' },
     { name: 'jon', email: 'jon@jon.com' },
@@ -47,14 +47,20 @@ var users = [
 app.get('/users', function(req, res) {
     res.render('users', {
         title: 'Users',
-        users: users,
+        users: Users,
     });
 });
 
-app.get('/users/:id', function(req, res, next) {
-    console.log(req.params);
-//  users.find(req.params.id, function(err, user) {
-//  });
+function loadUser(req, res, next) {
+    Users.find(req.params.id, function(err, user) {
+        if (! user) return next(new Error('Failed to load user.'));
+        req.user = user;
+        next();
+    });
+}
+
+app.get('/user/:id', loadUser, function(req, res, next) {
+    res.render('users/show', { user: req.user } );
 });
 
 app.listen(3000);
