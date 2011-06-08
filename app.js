@@ -41,19 +41,28 @@ app.get('/', function(req, res){
 //@TODO: learn about pulling stuff out into middleware functions (modules,
 //etc.)
 
+//@TODO: learn form handling!
 app.get('/stack', function(req, res) {
   res.render('stack', {
     title: 'Create a new stack of Flash Cards',
+    stacks: db.stacks, //@TODDO: fetch all stacks!
   });
 });
 
 app.get('/stack/:name', function(req, res) {
-  res.render('stack/stack', {
-    title: '"' + req.params.name + '" Flash Cards',
-    stacks: db.stacks, //@TODO: search this stack for something by the name of req.params.name
-  });
+  var stack = db.get(db.stacks, 'name', req.params.name);
+  if (stack) {
+    res.render('stack/stack', {
+      title: '"' + req.params.name + '" Flash Cards',
+      stack: stack, //@TODO: search this stack for something by the name of req.params.name
+    });
+  }
+  else {
+    res.send('No stack named "' + req.params.name + '"!', 404);
+  }
 });
 
+//@TODO: learn form handling!
 app.get('/stack/:name/card', function(req, res) {
   res.render('card', { //@TODO: this uses index.jade?
     title: 'Create a new flash card in the "' + req.params.name + '" stack', //@TODO: search this stack for something by the name of req.params.name,

@@ -6,6 +6,16 @@
  *   However, this schema feels right.
  */
 
+var get = function(obj, key, val) {
+  var o;
+  for (o in obj) {
+    if (obj[o][key] == val) {
+      return obj[o];
+    }
+  }
+  return false;
+};
+
 
 var stacks = [
   {
@@ -61,4 +71,5 @@ var stacks = [
 ];
 
 exports.stacks = stacks;
+exports.get = get;
 
