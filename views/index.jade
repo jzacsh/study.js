@@ -20,3 +20,6 @@ dl.tech
 h2 Stacks
 p Choose a stack of cards below to study, edit, review.
 
+ul#stacks
+  - each stack in stacks
+    li <a href="/stack/#{stack.name}">#{stack.name}</a> - #{stack.info} (#{stack.cards.length})

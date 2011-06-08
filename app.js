@@ -34,7 +34,8 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Flash Cards, Node.js &ndash; Powered'
+    title: 'Flash Cards, Node.js &ndash; Powered',
+    stacks: db.stacks,
   });
 });
 

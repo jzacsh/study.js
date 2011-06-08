@@ -1,5 +1,8 @@
 h1= title
-p "Click an individual card below to view its contents."
-ul#stacks
-  - each stack in stacks
-    li= <a href="#{/stack/stack.name}">stack.name</a> - stack.info
+p Click an individual card below to view its contents.
+
+h2 Listing of #{stack.name} Cards
+dl#stack
+  - each card in stack.cards
+    dd= Front of card # "#{/stack/stack.name/card}": stack.cards[card].front
+    dt= Back of card # "#{/stack/stack.name/card}": stack.cards[card].back
