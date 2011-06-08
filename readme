@@ -9,7 +9,7 @@ This project aims to:
 - Get me familiar with nosql (eg.: mongodb), if appropriate.
 - Utilize the latest HTML5 APIs.
 - Be incredibly simple looking:
-  - Two squares ,front and back, with text inside (like good, old index cards).
+  - Two squares, front and back, with text inside (like good, old index cards).
   - Hidden, toggle-able, edit -buttons and -forms.
   - eg.:
       +-----------------------------------+
