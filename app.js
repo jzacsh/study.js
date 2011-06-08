@@ -55,7 +55,8 @@ app.get('/stack/:name', function(req, res) {
   if (stack) {
     res.render('stack/stack', {
       title: '"' + req.params.name + '" Flash Cards',
-      stack: stack, //@TODO: search this stack for something by the name of req.params.name
+      name: stack.name, //@TODO: figure out how to nest 2-deep in a partial!!
+      cards: stack.cards,
     });
   }
   else {

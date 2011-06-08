@@ -1,8 +1,6 @@
 h1= title
 p Click an individual card below to view its contents.
 
-h2 Listing of #{stack.name} Cards
+h2 Listing of #{name} Cards
 dl#stack
-  - each card in stack.cards
-    dd= Front of card # "#{/stack/stack.name/card}": stack.cards[card].front
-    dt= Back of card # "#{/stack/stack.name/card}": stack.cards[card].back
+  != partial('stack', { collection: cards, name } )
