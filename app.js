@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var db = require('./db'); //@TODO: use an actual database!
 
 var app = module.exports = express.createServer();
 
@@ -37,31 +38,36 @@ app.get('/', function(req, res){
   });
 });
 
-var Users = [
-  { name: 'bob', email: 'bob@bob.com' },
-  { name: 'tom', email: 'tom@tom.com' },
-  { name: 'jon', email: 'jon@jon.com' },
-  { name: 'drew', email: 'drew@drew.com' },
-];
+//@TODO: learn about pulling stuff out into middleware functions (modules,
+//etc.)
 
-app.get('/users', function(req, res) {
-  res.render('users', {
-    title: 'Users',
-    users: Users,
+app.get('/stack/', function(req, res) {
+  res.render('stacks', {
+    title: 'Create a new stack of Flash Cards',
   });
 });
 
-function loadUser(req, res, next) {
-  Users.find(req.params.id, function(err, user) {
-    if (! user) return next(new Error('Failed to load user.'));
-    req.user = user;
-    next();
+app.get('/stack/:name', function(req, res) {
+  res.render('stacks', {
+    title: '"' + req.params.name + '" Flash Cards',
+    stacks: db.stacks, //@TODO: search this stack for something by the name of req.params.name
   });
-}
+});
 
-app.get('/user/:id', loadUser, function(req, res, next) {
-  res.render('users/show', { user: req.user } );
+app.get('/stack/:name/card/', function(req, res) {
+  res.render('card', { //@TODO: this uses index.jade?
+    title: 'Create a new flash card in the "' + req.params.name + '" stack', //@TODO: search this stack for something by the name of req.params.name,
+    stack: db.stacks, //@TODO: search this stack for something by the name of req.params.name
+  });
+});
+
+app.get('/stack/:name/card/:id', function(req, res) {
+  res.render('views/card/card', { //@TODO: this uses card.jade?
+    title: 'Flash card number: ' + req.params.id,
+    stacks: db.stacks, //@TODO: search this stack for something by the name of req.params.name
+  });
 });
 
 app.listen(3000);
 console.log("Express server listening on port %d", app.address().port);
+

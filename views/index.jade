@@ -1,5 +1,22 @@
 h1= title
-p This is a development page showing the features and APIs as I plan build them.
 
-h2 Users
-p click to view a list of <a href="/users">/users</a>
+p This is a development page showing the features and APIs as I plan build them.
+pre.tech
+  /
+      List available stacks of flash cards.
+
+  /stack/
+      Create a new stack of flash cards.
+
+  /stack/:name
+      List cards in a given stack who's slug is :name
+
+  /stack/:name/card/
+      Create a new flash card in this stack.
+
+  /stack/:name/card/:id
+      view a given card in a stack
+
+h2 Stacks
+p Choose a stack of cards below to study, edit, review.
+

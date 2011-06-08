@@ -1,0 +1,45 @@
+Node.js Flash Cards
+
+Flashcards should be easy to access online and offline from as many devices as
+possible. They also shouldn't be tied to a proprietary app you have to purchase
+for $3.
+
+This project aims to:
+- Get me familiar with node.js development.
+- Get me familiar with nosql (eg.: mongodb), if appropriate.
+- Utilize the latest HTML5 APIs.
+- Be incredibly simple looking:
+  - Two squares ,front and back, with text inside (like good, old index cards).
+  - Hidden, toggle-able, edit -buttons and -forms.
+  - eg.:
+      +-----------------------------------+
+      | [edit]                            |
+      |                                   |
+      |                                   |
+      |         QUESTION (front)          |
+      |                                   |
+      |                                   |
+      |                                   |
+      +-----------------------------------+
+
+      note: "edit" text below should be greyed out like drupal/views edit/admin
+      text.
+
+      +-----------------------------------+
+      | [edit]                            |
+      |                                   |
+      |                                   |
+      |           ANSWER (back)           |
+      |                                   |
+      |                                   |
+      |                                   |
+      +-----------------------------------+
+
+An example of a neat feature I'd really like to see is full use of LocalStorage
+HTML5 API, to better handle intermittent connectivity, while allowing 
+
+
+Terminology
+- stack: A collection of index cards on a related topic.
+- card: An individual item of study within a stack.
+
