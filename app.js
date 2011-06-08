@@ -42,13 +42,13 @@ app.get('/', function(req, res){
 //etc.)
 
 app.get('/stack', function(req, res) {
-  res.render('stacks', {
+  res.render('stack', {
     title: 'Create a new stack of Flash Cards',
   });
 });
 
 app.get('/stack/:name', function(req, res) {
-  res.render('stacks', {
+  res.render('stack/stack', {
     title: '"' + req.params.name + '" Flash Cards',
     stacks: db.stacks, //@TODO: search this stack for something by the name of req.params.name
   });
