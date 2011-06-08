@@ -41,7 +41,7 @@ app.get('/', function(req, res){
 //@TODO: learn about pulling stuff out into middleware functions (modules,
 //etc.)
 
-app.get('/stack/', function(req, res) {
+app.get('/stack', function(req, res) {
   res.render('stacks', {
     title: 'Create a new stack of Flash Cards',
   });
@@ -54,7 +54,7 @@ app.get('/stack/:name', function(req, res) {
   });
 });
 
-app.get('/stack/:name/card/', function(req, res) {
+app.get('/stack/:name/card', function(req, res) {
   res.render('card', { //@TODO: this uses index.jade?
     title: 'Create a new flash card in the "' + req.params.name + '" stack', //@TODO: search this stack for something by the name of req.params.name,
     stack: db.stacks, //@TODO: search this stack for something by the name of req.params.name
