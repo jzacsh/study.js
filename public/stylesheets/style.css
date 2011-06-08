@@ -1,7 +1,26 @@
+/** pre-definitions here: ***/
+/****************************/
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 600px;
+  margin: 0 auto 0 auto;
 }
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+.tech {
+  background-color: #dddddd;
+  white-space: pre;
+  padding: 1ex;
+  font-family: monospace;
+  margin-left: 1em;
+}
+.tech dd {
+  color: #00b7ff;
+  text-decoration: underline;
+  margin-left: 0;
+}
+.tech dt {
+  margin: 0 0 1ex 40px;
 }
