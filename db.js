@@ -55,15 +55,15 @@ var stacks = [
     info: 'Foreign language - course 1',
     cards: [
       {
-        font: 'la mia ragattsa',
+        front: 'la mia ragattsa',
         back: 'my girlfriend'
       },
       {
-        font: 'io oh makine rossa',
+        front: 'io oh makine rossa',
         back: 'I have a red car.'
       },
       {
-        font: 'io oh makine rossa',
+        front: 'io oh makine rossa',
         back: 'I have a red car.'
       }
     ]
