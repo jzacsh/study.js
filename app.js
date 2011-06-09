@@ -46,10 +46,11 @@ app.get('/', function(req, res){
 app.get('/stack', function(req, res) {
   res.render('stack', {
     title: 'Create a new stack of Flash Cards',
-    stacks: db.stacks, //@TODDO: fetch all stacks!
+    stacks: db.stacks,
   });
 });
 
+//@TODO: figure out why template that calls partial a partial doesn't show up!!
 app.get('/stack/:name', function(req, res) {
   var stack = db.get(db.stacks, 'name', req.params.name);
   if (stack) {
@@ -66,17 +67,24 @@ app.get('/stack/:name', function(req, res) {
 
 //@TODO: learn form handling!
 app.get('/stack/:name/card', function(req, res) {
-  res.render('card', { //@TODO: this uses index.jade?
-    title: 'Create a new flash card in the "' + req.params.name + '" stack', //@TODO: search this stack for something by the name of req.params.name,
-    stack: db.stacks, //@TODO: search this stack for something by the name of req.params.name
+  var stack_name = db.get(db.stacks, 'name', req.params.name).name;
+  res.render('card', {
+    title: 'Create a new flash card in the "' + stack_name + '" stack',
+    stack_name: stack_name,
   });
 });
 
 app.get('/stack/:name/card/:id', function(req, res) {
-  res.render('views/card/card', { //@TODO: this uses card.jade?
-    title: 'Flash card number: ' + req.params.id,
-    stacks: db.stacks, //@TODO: search this stack for something by the name of req.params.name
-  });
+  var found_card = db.get(db.stacks, 'name', req.params.name).cards[req.params.id];
+  if (found_card) {
+    res.render('card/card', { //@TODO: this uses card.jade?
+      title: 'Flash card number: ' + req.params.id,
+      card: found_card, //@TODO: search this stack for something by the name of req.params.name
+    });
+  }
+  else {
+    res.send('No card #"' + req.params.id + '"!', 404);
+  }
 });
 
 app.listen(3000);
