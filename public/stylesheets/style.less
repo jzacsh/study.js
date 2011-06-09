@@ -1,7 +1,7 @@
 /** pre-definitions here: ***/
 
 @link_color: #00B7FF;
-
+@bg_color_code: #dddddd;
 /****************************/
 
 body {
@@ -16,14 +16,14 @@ a {
 }
 
 .tech {
-  background-color: #dddddd;
+  background-color: @bg_color_code;
   white-space: pre;
   padding: 1ex;
   font-family: monospace;
   margin-left: 1em;
 }
 
-.tech dd {
+.tech dt {
   color: @link_color;
   text-decoration: underline;
 }

@@ -16,7 +16,7 @@ a {
   font-family: monospace;
   margin-left: 1em;
 }
-.tech dd {
+.tech dt {
   color: #00b7ff;
   text-decoration: underline;
 }
