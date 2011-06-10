@@ -1,0 +1,2 @@
+- fix implementation of partials
+    figure out why partials take over the final output, eg.: /stack/:name
