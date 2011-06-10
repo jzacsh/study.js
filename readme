@@ -1,8 +1,10 @@
 Node.js Flash Cards
 
+
 Flashcards should be easy to access online and offline from as many devices as
 possible. They also shouldn't be tied to a proprietary app you have to purchase
 for $3.
+
 
 This project aims to:
 - Get me familiar with node.js development.
