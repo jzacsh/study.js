@@ -1,4 +1,4 @@
 - for (card in cards)
-  dt  <abbreviation class="card-#{card}" title="Front">F</abbreviation>: #{cards[card].front}
-  dd  <abbreviation class="card-#{card}" title="Back">B</abbreviation>: #{cards[card].back}
+  dt(class="front card-#{card}")  <abbreviation title="Front">F</abbreviation>: #{cards[card].front}
+  dd(class="back card-#{card}")  <abbreviation title="Back">B</abbreviation>: #{cards[card].back}
 
