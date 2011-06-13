@@ -63,8 +63,8 @@ var stacks = [
         back: 'I have a red car.'
       },
       {
-        front: 'io oh makine rossa',
-        back: 'I have a red car.'
+        front: 'io oh andare in Italia',
+        back: 'I want to go to Italy.'
       }
     ]
   }
