@@ -1,2 +1,23 @@
-- fix implementation of partials
-    figure out why partials take over the final output, eg.: /stack/:name
+[basics]
+- form APIs with node.js
+- use actual storage, specifically mongodb
+    - remember a data field is needed to count correct/incorrect
+- see what can take from middleware screencast
+  ( http://www.screenr.com/elL )
+- add new algorithm; api: /stack/:name/{next,previous}
+    - educational algorithm to help you learn what you're having trouble with.
+
+[advanced]
+- utilize html5 LocalStorage APIs
+    - allow offline use of entire dataset
+    - allow offline editing; re-syncing on re-connection
+
+[final]
+- get a designer to come up with something beatufiul
+    - make getting "correct" something visually pleasing (eg.: GREEN colors)
+    - '' "incorrect" '' (eg.: RED colors)
+- implement designer's specs
+
+x fix implementation of partials
+    x figure out why partials take over the final output, eg.: /stack/:name
+
