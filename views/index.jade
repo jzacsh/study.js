@@ -1,6 +1,16 @@
 h1= title
 
 p This is a development page showing the features and APIs as I plan build them.
+
+h2 API Structure
+
+- var rest_uri = 'http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services';
+- var rest_txt = 'REpresentational State Transfer';
+
+p
+  | Below is a list of simple <a href="#{rest_uri}" title="#{rest_txt}">RESTful</a>
+  | paths based on basic terminology like, "stack" and "card".
+
 dl.tech
     dt /
     dd List available stacks of flash cards.
@@ -18,7 +28,9 @@ dl.tech
     dd view a given card in a stack
 
 h2 Stacks
-p Choose a stack of cards below to study, edit, review.
+p
+ | Choose a stack of cards below to study, edit, review or
+ | <a href="/stack/">create a new stack</a>.
 
 ul#stacks
   - each stack in stacks
