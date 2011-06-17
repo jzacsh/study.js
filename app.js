@@ -54,7 +54,7 @@ app.get('/stack/:name', function(req, res) {
   var stack = db.get(db.stacks, 'name', req.params.name);
   if (stack) {
     res.render('stack/stack', {
-      title: '"' + req.params.name + '" Flash Cards',
+      title: req.params.name.charAt(0).toUpperCase() + req.params.name.slice(1) + ' Flash Cards',
       name: stack.name, //@TODO: figure out how to nest 2-deep in a partial!!
       cards: stack.cards,
     });
