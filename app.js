@@ -40,7 +40,7 @@ app.get('/', function(req, res){
 });
 
 //@TODO: learn about pulling stuff out into middleware functions (modules,
-//etc.)
+//etc.): http://www.screenr.com/elL
 
 //@TODO: learn form handling!
 app.get('/stack', function(req, res) {
@@ -50,7 +50,6 @@ app.get('/stack', function(req, res) {
   });
 });
 
-//@TODO: figure out why template that calls partial a partial doesn't show up!!
 app.get('/stack/:name', function(req, res) {
   var stack = db.get(db.stacks, 'name', req.params.name);
   if (stack) {
