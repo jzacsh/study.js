@@ -64,13 +64,18 @@ app.get('/stack/:name', function(req, res) {
   }
 });
 
-//@TODO: learn form handling!
 app.get('/stack/:name/card', function(req, res) {
   var stack_name = db.get(db.stacks, 'name', req.params.name).name;
   res.render('card', {
     title: 'Create a new flash card in the "' + stack_name + '" stack',
     stack_name: stack_name,
   });
+});
+
+//@TODO: learn form handling!
+app.post('/stack/:name/card', function(req, res) {
+  console.log(req.body);
+  res.redirect('back');
 });
 
 app.get('/stack/:name/card/:id', function(req, res) {

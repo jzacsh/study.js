@@ -1,4 +1,14 @@
+body(id="stack-" + stack_name)
 h1= title
 
 p Fill in the form below to add a new card in the "#{stack_name}" stack of flash cards.
+
+form(id="form-new-card", action="", method="post")
+  div(class="front")
+    label Front:
+    input(name="front", type="text")
+  div(class="back")
+    label Back:
+    input(name="back", type="text")
+  input(type="submit", value="Create Card")
 
