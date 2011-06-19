@@ -1,7 +1,11 @@
 [basics]
-- form APIs with node.js
 - use actual storage, specifically mongodb
     - remember a data field is needed to count correct/incorrect
+    - perhaps revamp api based on new simplicities, eg.:
+        - card-ids are embedded in doc
+        - put vs get allows api routes that accept tons of params, no need
+          for form specific routes.
+- form APIs with node.js
 - see what can take from middleware screencast
   ( http://www.screenr.com/elL )
 - add new algorithm; api: /stack/:name/{next,previous}
