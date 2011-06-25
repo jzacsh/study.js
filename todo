@@ -1,4 +1,17 @@
 [basics]
+- restructure/plan APIs
+    - HTTP POST/DELETE instead of redundant /[url]/[path]/
+    - use JSON params passed
+    - make sure solution exists for:
+        -   /
+            - List all available stacks of flash cards.
+        - /stack/[name]
+            - Show contents of a stack, who's slug is [name]
+        - /stack/[name]/card/
+            - Create a new flash card in a given stack.
+        - /stack/[name]/card/[id]
+            - Show contents of a flash card in a given stack.
+
 - use actual storage, specifically mongodb
     - remember a data field is needed to count correct/incorrect
     - perhaps revamp api based on new simplicities, eg.:
@@ -21,6 +34,8 @@
     - make getting "correct" something visually pleasing (eg.: GREEN colors)
     - '' "incorrect" '' (eg.: RED colors)
 - implement designer's specs
+
+###############################################################################
 
 x fix implementation of partials
     x figure out why partials take over the final output, eg.: /stack/:name
