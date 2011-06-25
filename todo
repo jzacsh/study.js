@@ -1,9 +1,11 @@
 [basics]
 - restructure/plan APIs
+    spoke with djen;
+    keep original paths and add in /edit/ new/ appendixes to each path-type.
     - HTTP POST/DELETE instead of redundant /[url]/[path]/
     - use JSON params passed
     - make sure solution exists for:
-        -   /
+        - /
             - List all available stacks of flash cards.
         - /stack/[name]
             - Show contents of a stack, who's slug is [name]
