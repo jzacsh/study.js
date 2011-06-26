@@ -12,12 +12,15 @@ a {
 }
 h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 5em;
   color: #555555;
 }
 h2 {
   padding-left: 1em;
   color: #888888;
+}
+.section {
+  margin-bottom: 3em;
 }
 .content {
   border-left: 1px solid #aaaaaa;

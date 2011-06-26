@@ -1,9 +1,29 @@
-<div class="section">
 h1= title
 
+<div class="section">
+h2 Node.js&ndash;powered flash cards,
+
+<div class="content">
+p
+  | Simple flash card utility to help you study, but using the latest in
+  | webscale technologies, writing to /dev/null whenever possible. Below is a
+  | summary of features and APIs as I plan build them.
+
+</div><!--content-->
+</div><!--section-->
+
+<div class="section">
+
+h2 Stacks
 <div class="content">
 
-p This is a development page showing the features and APIs as I plan build them.
+p
+ | Choose a stack of cards below to study, edit, review or
+ | <a href="/stack/">create a new stack</a>.
+
+ul#stacks
+  - each stack in stacks
+    li <a href="/stack/#{stack.name}">#{stack.name}</a> - #{stack.info} (#{stack.cards.length})
 
 </div><!--content-->
 </div><!--section-->
@@ -51,22 +71,6 @@ dl.tech
 
   dt /stack/[name]/card/[id]/edit
   dd Edit contents of flash card number [id] in stack [name].
-
-</div><!--content-->
-</div><!--section-->
-
-<div class="section">
-
-h2 Stacks
-<div class="content">
-
-p
- | Choose a stack of cards below to study, edit, review or
- | <a href="/stack/">create a new stack</a>.
-
-ul#stacks
-  - each stack in stacks
-    li <a href="/stack/#{stack.name}">#{stack.name}</a> - #{stack.info} (#{stack.cards.length})
 
 </div><!--content-->
 </div><!--section-->
