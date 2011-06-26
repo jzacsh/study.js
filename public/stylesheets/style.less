@@ -1,7 +1,8 @@
 /** pre-definitions here: ***/
 
 @link_color: #00B7FF;
-@bg_color_code: #dddddd;
+@bg_color: #dddddd;
+@border_color: #aaaaaa;
 /****************************/
 
 body {
@@ -15,10 +16,15 @@ a {
   color: @link_color;
 }
 
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
 .section { }
 
 .content {
-  border-left: 1px solid #cccccc;
+  border-left: 1px solid @border_color;
   padding-left: 1em;
 }
 
@@ -27,7 +33,7 @@ a {
 }
 
 dl.tech {
-  background-color: @bg_color_code;
+  background-color: @bg_color;
   white-space: pre;
   padding: 1ex;
   font-family: monospace;
