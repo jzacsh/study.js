@@ -25,6 +25,7 @@ h2 {
 .content {
   border-left: 1px solid #aaaaaa;
   padding-left: 1em;
+  padding-bottom: .25ex;
 }
 .note {
   font-style: italic;
