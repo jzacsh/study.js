@@ -6,13 +6,24 @@
     - use JSON params passed
     - make sure solution exists for:
         - /
-            - List all available stacks of flash cards.
+            - Simple to app (teaser-top). List all available stacks of flash cards.
+        - /stack/new
+            :redirected to, from: /stack/
+            - Create a new stack of flash cards.
         - /stack/[name]
-            - Show contents of a stack, who's slug is [name]
-        - /stack/[name]/card/
-            - Create a new flash card in a given stack.
+            - Show contents of a stack, named [name]
+        - /stack/[name]/edit
+            - Edit (re-order, show edit-links to) flash cards in stack [name].
+        - /stack/[name]/study
+            - Review cards with study algorithms to teach you and keep track
+              of what you do/don't seem to know.
+        - /stack/[name]/card/new
+            :redirected to, from: /stack/[name]/card
+            - Create a new flash card on the stack [name].
         - /stack/[name]/card/[id]
-            - Show contents of a flash card in a given stack.
+            - Show contents of flash card number [id] in stack [name].
+        - /stack/[name]/card/[id]/edit
+            - Edit contents of flash card number [id] in stack [name].
 
 - use actual storage, specifically mongodb
     - remember a data field is needed to count correct/incorrect
@@ -27,6 +38,8 @@
     - educational algorithm to help you learn what you're having trouble with.
 
 [advanced]
+- consider jquery-mobile lib to handle transition between cards and loading of
+  their URLs
 - utilize html5 LocalStorage APIs
     - allow offline use of entire dataset
     - allow offline editing; re-syncing on re-connection
