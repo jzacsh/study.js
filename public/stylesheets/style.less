@@ -18,17 +18,22 @@ a {
   color: @link_color;
 }
 
+h2 {
+  padding-left: 1em;
+  color: #888888;
+}
+
+.clearfix {
+  clear: both;
+  height: 0;
+}
+
 h1.app-name {
   text-align: center;
   font-size: 6em;
   margin-top: 3px;
   margin-bottom: 1ex;
   color: #555555;
-}
-
-h2 {
-  padding-left: 1em;
-  color: #888888;
 }
 
 .section {
@@ -61,5 +66,39 @@ dl.tech {
   font-weight: bold;
   text-decoration: underline;
   margin-top: 1ex;
+}
+
+#stack-listing {
+  width: 100%;
+}
+
+ul#stack-listing {
+  padding-left: 0;
+}
+
+#stack-listing li {
+  width: 29%;
+  height: 100%;
+  list-style-type: none;
+  float: left;
+  outline: 1px solid @border_color;
+  padding: 2% 1% 2% 1%;
+  margin: 1%;
+  font-style: italic;
+  text-align: center;
+}
+
+#stack-listing li a {
+  font-size: 1.15em;
+  font-style: normal;
+  font-weight: bold;
+  clear: both;
+  display: block;
+  padding-bottom: 1ex;
+}
+
+#stack-listing li.pseudo-link:hover {
+  outline: 1px solid @link_color;
+  cursor: pointer;
 }
 

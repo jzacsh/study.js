@@ -1,6 +1,6 @@
 h1.app-name= title
 
-<div class="section">
+<div id="intro" class="section">
 h2 Node.js&ndash;powered flash cards,
 
 <div class="content">
@@ -12,7 +12,7 @@ p
 </div><!--content-->
 </div><!--section-->
 
-<div class="section">
+<div id="stacks" class="section">
 
 h2 Stacks
 <div class="content">
@@ -21,14 +21,15 @@ p
  | Choose a stack of cards below to study, edit, review or
  | <a href="/stack/">create a new stack</a>.
 
-ul#stacks
+ul#stack-listing
   - each stack in stacks
-    li <a href="/stack/#{stack.name}">#{stack.name}</a> - #{stack.info} (#{stack.cards.length})
+    li <a href="/stack/#{stack.name}">#{stack.name}:</a> #{stack.info} (#{stack.cards.length})
+   <div class="clearfix"></div>
 
 </div><!--content-->
 </div><!--section-->
 
-<div class="section">
+<div id="api" class="section">
 h2 API Structure
 
 <div class="content">
