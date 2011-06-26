@@ -39,8 +39,8 @@ app.get('/', function(req, res){
   });
 });
 
-//@TODO: learn about pulling stuff out into middleware functions (modules,
-//etc.): http://www.screenr.com/elL
+//@TODO: use middleware to load cards and/or stack for common URLs
+// eg.: learn about middleware: http://www.screenr.com/elL
 
 //@TODO: learn form handling!
 app.get('/stack', function(req, res) {

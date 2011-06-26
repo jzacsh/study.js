@@ -9,7 +9,14 @@ body {
 a {
   color: #00b7ff;
 }
-.tech {
+.content {
+  border-left: 1px solid #cccccc;
+  padding-left: 1em;
+}
+.note {
+  font-style: italic;
+}
+dl.tech {
   background-color: #dddddd;
   white-space: pre;
   padding: 1ex;
@@ -17,12 +24,11 @@ a {
   margin-left: 1em;
   outline: 1px solid #aaaaaa;
   color: #404040;
+  white-space: normal;
 }
 .tech dt {
   color: #00b7ff;
   font-weight: bold;
   text-decoration: underline;
-}
-.tech dt {
   margin-top: 1ex;
 }

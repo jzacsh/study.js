@@ -1,8 +1,17 @@
+<div class="section">
 h1= title
+
+<div class="content">
 
 p This is a development page showing the features and APIs as I plan build them.
 
+</div><!--content-->
+</div><!--section-->
+
+<div class="section">
 h2 API Structure
+
+<div class="content">
 
 - var rest_uri = 'http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services';
 - var rest_txt = 'REpresentational State Transfer';
@@ -10,26 +19,47 @@ h2 API Structure
 p
   | Below is a list of simple <a href="#{rest_uri}" title="#{rest_txt}">RESTful</a>
   | paths based on basic terminology like, "stack" and "card".
+  | (<span class="note">note: "<strong>:re: /other-url/</strong>" means a given
+  | URL is redirected to from <strong>/other-url/</strong></span>)
 
 dl.tech
-    dt /
-    dd List all available stacks of flash cards.
+  dt /
+  dd Simple to app (teaser-top). List all available stacks of flash cards.
 
-    dt /api/
-    dd
-      | Returns JSON. Receives POST of JSON object parameters to invoke any
-      | given aspect of the application.
+  dt /stack/new
+  dd
+    | :re: /stack/
+    | Create a new stack of flash cards.
 
-    dt /stack/[name]
-    dd Show contents of a stack, who's slug is [name]
+  dt /stack/[name]
+  dd Show contents of a stack, named [name]
 
-    dt /stack/[name]/card/
-    dd Create a new flash card in a given stack.
+  dt /stack/[name]/edit
+  dd Edit (re-order, show edit-links to) flash cards in stack [name].
 
-    dt /stack/[name]/card/[id]
-    dd Show contents of a flash card in a given stack.
+  dt /stack/[name]/study
+  dd
+    | Review cards with study algorithms to teach you and keep track of what you do/don't seem to know.
+
+  dt /stack/[name]/card/new
+  dd
+    | :re: /stack/[name]/card
+    | Create a new flash card on the stack [name].
+
+  dt /stack/[name]/card/[id]
+  dd Show contents of flash card number [id] in stack [name].
+
+  dt /stack/[name]/card/[id]/edit
+  dd Edit contents of flash card number [id] in stack [name].
+
+</div><!--content-->
+</div><!--section-->
+
+<div class="section">
 
 h2 Stacks
+<div class="content">
+
 p
  | Choose a stack of cards below to study, edit, review or
  | <a href="/stack/">create a new stack</a>.
@@ -37,3 +67,7 @@ p
 ul#stacks
   - each stack in stacks
     li <a href="/stack/#{stack.name}">#{stack.name}</a> - #{stack.info} (#{stack.cards.length})
+
+</div><!--content-->
+</div><!--section-->
+
