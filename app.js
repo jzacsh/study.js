@@ -37,6 +37,7 @@ app.dynamicHelpers({
       scripts: [
         'lib/jquery.min.js',
         'lib/raphael-min.js'
+        'lib/site-core.js'
       ],
       styles: []
     };
