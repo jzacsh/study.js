@@ -4,11 +4,11 @@ html
     title= title
     - each style in global_header().styles
       link(rel='stylesheet', href='/stylesheets/' + style)
-    - each script in global_header().scripts
-      script(src='/scripts/' + script)
-
     - each style in custom_header.styles
       link(rel='stylesheet', href='/stylesheets/' + style)
+
+    - each script in global_header().scripts
+      script(src='/scripts/' + script)
     - each script in custom_header.scripts
       script(src='/scripts/' + script)
   body!= body
