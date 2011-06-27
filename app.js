@@ -33,7 +33,21 @@ app.configure('production', function(){
 //giving layout.jade access to list of js files
 app.helpers({
   //@TODO: fix this var to be somehow static (not called multiple requests)
-  header: function() { return app.settings.head; }
+  global_header: function() { return app.settings.head; }
+});
+
+app.dynamicHelpers({
+  custom_header: function(req, res) {
+    if ('head' in req) {
+      return {
+        scripts: req.head.scripts || [],
+        styles: req.head.styles || []
+      };
+    }
+    else {
+      return { scripts: [], styles: [] };
+    }
+  }
 });
 
 //setting framework for js files
@@ -43,13 +57,16 @@ app.set('head', {
     'lib/raphael-min.js',
     'lib/site-core.js',
   ],
-  styles: []
+  styles: [
+    'style.css'
+  ]
 });
 
 // Routes
 
 app.get('/', function(req, res){
-  app.settings.head.scripts.push('site-ui.js');
+  req.head = { scripts: ['site-ui.js'] };
+
   res.render('index', {
     title: 'study.js',
     stacks: db.stacks,

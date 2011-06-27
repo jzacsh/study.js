@@ -2,9 +2,13 @@
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    - each style in header().styles
+    - each style in global_header().styles
       link(rel='stylesheet', href='/stylesheets/' + style)
-    - each script in header().scripts
+    - each script in global_header().scripts
+      script(src='/scripts/' + script)
+
+    - each style in custom_header.styles
+      link(rel='stylesheet', href='/stylesheets/' + style)
+    - each script in custom_header.scripts
       script(src='/scripts/' + script)
   body!= body
