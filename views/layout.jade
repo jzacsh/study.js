@@ -3,4 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    - each style in head.styles
+      link(rel='stylesheet', href='/stylesheets/' + style)
+    script(src='/scripts/site-core.js')
+    - each script in head.scripts
+      script(src='/scripts/' + script)
+    script(src='/scripts/' + jsfile)
   body!= body

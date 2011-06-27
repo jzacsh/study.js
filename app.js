@@ -30,12 +30,26 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
+app.dynamicHelpers({
+  // framework for javascript and css inclusion
+  head: function (req, res) {
+    return {
+      scripts: [
+        'lib/jquery.min.js',
+        'lib/raphael-min.js'
+      ],
+      styles: []
+    };
+  }
+});
+
 // Routes
 
 app.get('/', function(req, res){
   res.render('index', {
     title: 'study.js',
     stacks: db.stacks,
+    jsfile: 'site-ui.js',
   });
 });
 

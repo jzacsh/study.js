@@ -1,4 +1,6 @@
 [basics]
+- figure out how to append to objects returned from dynamicHelpers (eg.: js
+  file) in a router.
 - restructure/plan APIs
     spoke with djen;
     keep original paths and add in /edit/ new/ appendixes to each path-type.
