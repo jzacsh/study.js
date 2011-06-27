@@ -70,15 +70,24 @@ ul#stack-listing {
   font-style: italic;
   text-align: center;
 }
+#stack-listing li:hover {
+  outline: 1px solid #00b7ff;
+  cursor: pointer;
+}
 #stack-listing li a {
-  font-size: 1.15em;
   font-style: normal;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+#stack-listing li a .stack-name {
+  font-size: 1.15em;
+  font-style: inherit;
+  text-decoration: underline;
   font-weight: bold;
   clear: both;
   display: block;
   padding-bottom: 1ex;
-}
-#stack-listing li.pseudo-link:hover {
-  outline: 1px solid #00b7ff;
-  cursor: pointer;
+  color: #00b7ff;
 }

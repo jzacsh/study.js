@@ -23,7 +23,11 @@ p
 
 ul#stack-listing
   - each stack in stacks
-    li <a href="/stack/#{stack.name}">#{stack.name}:</a> #{stack.info} (#{stack.cards.length})
+    li
+     | <a href="/stack/#{stack.name}">
+     | <span class="stack-name">#{stack.name}:</span>
+     | #{stack.info} (#{stack.cards.length})
+     | </a>
    <div class="clearfix"></div>
 
 </div><!--content-->
