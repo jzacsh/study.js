@@ -62,10 +62,51 @@ app.set('head', {
   ]
 });
 
+//custom namespace
+var Study = {
+  add_cssjs: function(req, fType, file) {
+    console.log(arguments); //@TODO: remove me!! 
+    console.log(fType); //@TODO: remove me!! 
+    console.log(file); //@TODO: remove me!! 
+    if (file === null || (fType !== 'scripts' ||
+        fType !== 'styles')) {
+      console.log('fail!!'); //@TODO: remove me!! 
+      return false;
+    }
+
+    console.log('bahhh!'); //@TODO: remove me!! 
+
+    var _default = function () {
+      var _head = { scripts: [], styles: []};
+
+      _head[fType].push(file);
+      return _head;
+    };
+
+    //actual work
+    if ('head' in req) {
+      if ('scripts' in req.head &&
+        'styles' in req.head) {
+        //overwrite the old
+        req.head[fType].push(file);
+      }
+      else {
+        //we have a malformed object
+        req.head = _default();
+      }
+    }
+    else {
+      //this is our first run
+      req.head = _default();
+    }
+  },
+};
+
 // Routes
 
 app.get('/', function(req, res){
-  req.head = { scripts: ['site-ui.js'] };
+//Study.add_cssjs(req, 'scripts', 'site-ui.js');
+  req.head = { scripts: ['site-ui.js'] }; //@TODO: replace w/above line!
 
   res.render('index', {
     title: 'study.js',
