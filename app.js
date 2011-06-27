@@ -30,27 +30,29 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-app.dynamicHelpers({
-  // framework for javascript and css inclusion
-  head: function (req, res) {
-    return {
-      scripts: [
-        'lib/jquery.min.js',
-        'lib/raphael-min.js'
-        'lib/site-core.js'
-      ],
-      styles: []
-    };
-  }
+//giving layout.jade access to list of js files
+app.helpers({
+  //@TODO: fix this var to be somehow static (not called multiple requests)
+  header: function() { return app.settings.head; }
+});
+
+//setting framework for js files
+app.set('head', {
+  scripts: [
+    'lib/jquery.min.js',
+    'lib/raphael-min.js',
+    'lib/site-core.js',
+  ],
+  styles: []
 });
 
 // Routes
 
 app.get('/', function(req, res){
+  app.settings.head.scripts.push('site-ui.js');
   res.render('index', {
     title: 'study.js',
     stacks: db.stacks,
-    jsfile: 'site-ui.js',
   });
 });
 

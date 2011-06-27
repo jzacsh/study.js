@@ -3,9 +3,8 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    - each style in head.styles
+    - each style in header().styles
       link(rel='stylesheet', href='/stylesheets/' + style)
-    - each script in head.scripts
+    - each script in header().scripts
       script(src='/scripts/' + script)
-    script(src='/scripts/' + jsfile)
   body!= body
