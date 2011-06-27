@@ -3,6 +3,8 @@
 @link_color: #00B7FF;
 @bg_color: #dddddd;
 @border_color: #aaaaaa;
+@shadow_color: #cccccc;
+@shadow_color_hover: #ababab;
 /****************************/
 
 body {
@@ -38,6 +40,10 @@ h1.app-name {
 
 .section {
   margin-bottom: 3em;
+}
+
+.section:hover h2 {
+  color: #444444;
 }
 
 .content {
@@ -86,11 +92,13 @@ ul#stack-listing {
   margin: 1%;
   font-style: italic;
   text-align: center;
+  box-shadow: .5ex .75ex 2ex @shadow_color;
 }
 
 #stack-listing li:hover {
   outline: 1px solid @link_color;
   cursor: pointer;
+  box-shadow: .5ex .75ex 2ex @shadow_color_hover;
 }
 
 #stack-listing li a {
@@ -102,7 +110,7 @@ ul#stack-listing {
 }
 
 #stack-listing li a .stack-name {
-  font-size: 1.15em;
+  font-size: 1.75em;
   font-style: inherit;
   text-decoration: underline;
   font-weight: bold;

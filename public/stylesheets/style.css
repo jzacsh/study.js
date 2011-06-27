@@ -29,6 +29,9 @@ h1.app-name {
 .section {
   margin-bottom: 3em;
 }
+.section:hover h2 {
+  color: #444444;
+}
 .content {
   border-left: 1px solid #aaaaaa;
   padding-left: 1em;
@@ -69,10 +72,12 @@ ul#stack-listing {
   margin: 1%;
   font-style: italic;
   text-align: center;
+  box-shadow: 0.5ex 0.75ex 2ex #cccccc;
 }
 #stack-listing li:hover {
   outline: 1px solid #00b7ff;
   cursor: pointer;
+  box-shadow: 0.5ex 0.75ex 2ex #ababab;
 }
 #stack-listing li a {
   font-style: normal;
@@ -82,7 +87,7 @@ ul#stack-listing {
   height: 100%;
 }
 #stack-listing li a .stack-name {
-  font-size: 1.15em;
+  font-size: 1.75em;
   font-style: inherit;
   text-decoration: underline;
   font-weight: bold;
