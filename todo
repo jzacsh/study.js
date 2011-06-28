@@ -3,13 +3,12 @@
     spoke with djen;
     keep original paths and add in /edit/ new/ appendixes to each path-type.
     - HTTP POST/DELETE instead of redundant /[url]/[path]/
-    - use JSON params passed
     - make sure solution exists for:
     (note: ":re: /other-url/" means a URL is redirected to from /other-url/)
         - /
             - Simple to app (teaser-top). List all available stacks of flash cards.
         - /stack/new
-            :re: /stack/
+            x :re: /stack/
             - Create a new stack of flash cards.
         - /stack/[name]
             - Show contents of a stack, named [name]
@@ -19,7 +18,7 @@
             - Review cards with study algorithms to teach you and keep track
               of what you do/don't seem to know.
         - /stack/[name]/card/new
-            :re: /stack/[name]/card
+            - :re: /stack/[name]/card
             - Create a new flash card on the stack [name].
         - /stack/[name]/card/[id]
             - Show contents of flash card number [id] in stack [name].

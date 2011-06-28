@@ -110,8 +110,9 @@ app.get('/', function(req, res){
 //@TODO: use middleware to load cards and/or stack for common URLs
 // eg.: learn about middleware: http://www.screenr.com/elL
 
+app.get('/stack', function(req, res) { res.redirect('/stack/new') });
 //@TODO: learn form handling!
-app.get('/stack', function(req, res) {
+app.get('/stack/new', function(req, res) {
   res.render('stack', {
     title: 'Create a new stack of Flash Cards',
     stacks: db.stacks,
