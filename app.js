@@ -110,7 +110,9 @@ app.get('/', function(req, res){
 //@TODO: use middleware to load cards and/or stack for common URLs
 // eg.: learn about middleware: http://www.screenr.com/elL
 
+//redirect
 app.get('/stack', function(req, res) { res.redirect('/stack/new') });
+
 //@TODO: learn form handling!
 app.get('/stack/new', function(req, res) {
   res.render('stack', {
@@ -133,18 +135,19 @@ app.get('/stack/:name', function(req, res) {
   }
 });
 
+//redirect
 app.get('/stack/:name/card', function(req, res) {
+  var stack_name = db.get(db.stacks, 'name', req.params.name).name;
+  res.redirect('/stack/' + stack_name + '/card/new');
+});
+
+//@TODO: learn form handling!
+app.get('/stack/:name/card/new', function(req, res) {
   var stack_name = db.get(db.stacks, 'name', req.params.name).name;
   res.render('card', {
     title: 'Create a new flash card in the "' + stack_name + '" stack',
     stack_name: stack_name,
   });
-});
-
-//@TODO: learn form handling!
-app.post('/stack/:name/card', function(req, res) {
-  console.log(req.body);
-  res.redirect('back');
 });
 
 app.get('/stack/:name/card/:id', function(req, res) {
