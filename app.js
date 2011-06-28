@@ -65,16 +65,10 @@ app.set('head', {
 //custom namespace
 var Study = {
   add_cssjs: function(req, fType, file) {
-    console.log(arguments); //@TODO: remove me!! 
-    console.log(fType); //@TODO: remove me!! 
-    console.log(file); //@TODO: remove me!! 
-    if (file === null || (fType !== 'scripts' ||
+    if (false || (fType !== 'scripts' &&
         fType !== 'styles')) {
-      console.log('fail!!'); //@TODO: remove me!! 
       return false;
     }
-
-    console.log('bahhh!'); //@TODO: remove me!! 
 
     var _default = function () {
       var _head = { scripts: [], styles: []};
@@ -105,8 +99,8 @@ var Study = {
 // Routes
 
 app.get('/', function(req, res){
-//Study.add_cssjs(req, 'scripts', 'site-ui.js');
-  req.head = { scripts: ['site-ui.js'] }; //@TODO: replace w/above line!
+  Study.add_cssjs(req, 'scripts', 'site-ui.js');
+//req.head = { scripts: ['site-ui.js'] }; //@TODO: replace w/above line!
 
   res.render('index', {
     title: 'study.js',
