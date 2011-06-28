@@ -100,7 +100,6 @@ var Study = {
 
 app.get('/', function(req, res){
   Study.add_cssjs(req, 'scripts', 'site-ui.js');
-//req.head = { scripts: ['site-ui.js'] }; //@TODO: replace w/above line!
 
   res.render('index', {
     title: 'study.js',
