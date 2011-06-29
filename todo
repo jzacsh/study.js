@@ -25,6 +25,8 @@
         - /stack/[name]/card/[id]/edit
             - Edit contents of flash card number [id] in stack [name].
 
+- port css to sass, from less
+- port templating to haml, from jade
 - use actual storage, specifically mongodb
     - remember a data field is needed to count correct/incorrect
     - perhaps revamp api based on new simplicities, eg.:
