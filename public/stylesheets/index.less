@@ -1,0 +1,70 @@
+/**
+ * Styles for index page.
+ */
+
+/** pre-definitions here: ***/
+@ffamily_treb: 'Trebuchet MS', Arial, sans-serif;
+@blue_color: #00B7FF;
+@orange_color: #ff4800;
+@bg_color: #dddddd;
+@border_color: #aaaaaa;
+@shadow_color: #cccccc;
+@shadow_color_hover: #ababab;
+/****************************/
+
+#api .note p {
+  margin-left: 1em;
+  color: #555555;
+}
+
+#stack-listing {
+  width: 100%;
+}
+
+ul#stack-listing {
+  padding-left: 0;
+}
+
+#stack-listing li {
+  width: 28%;
+  height: 100%;
+  list-style-type: none;
+  float: left;
+  border: 1px solid @border_color;
+  padding: 2% 1% 2% 1%;
+  margin: 1%;
+  font-style: italic;
+  text-align: center;
+  box-shadow: .5ex .75ex 2ex @shadow_color;
+}
+
+#stack-listing li:hover {
+  border: 1px solid @blue_color;
+  cursor: pointer;
+  box-shadow: .5ex .75ex 2ex @shadow_color_hover;
+}
+
+#stack-listing li:active,
+#stack-listing li:focus {
+  border-color: @orange_color;
+}
+
+#stack-listing li a {
+  font-style: normal;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+#stack-listing li a .stack-name {
+  font-size: 1.75em;
+  font-style: inherit;
+  font-family: @ffamily_treb;
+  font-weight: bold;
+  clear: both;
+  display: block;
+  padding-bottom: 1ex;
+  color: @orange_color;
+}
+
