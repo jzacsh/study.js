@@ -25,10 +25,13 @@ p
 
 ul#stack-listing
   - each stack in stacks
+    - var qty=stack.cards.length
     li
-     | <a href="/stack/#{stack.name}">
+     | <a title="#{qty} #{stack.name} cards"
+     | href="/stack/#{stack.name}">
+     | <span class="note quantity">(#{qty})</span>
      | <span class="stack-name">#{stack.name}:</span>
-     | #{stack.info} (#{stack.cards.length})
+     | #{stack.info}
      | </a>
    <div class="clearfix"></div>
 
