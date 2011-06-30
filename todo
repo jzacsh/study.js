@@ -1,4 +1,8 @@
 [basics]
+- convert all icons to monotone-black only (eg.: raphaeljs free icons)
+  - sprite all icons together
+- put "fork me" at top-right of index page; github-inspired
+  - link this to code.jzacsh.com; use custom icon
 - restructure/plan APIs
     spoke with djen;
     keep original paths and add in /edit/ new/ appendixes to each path-type.
