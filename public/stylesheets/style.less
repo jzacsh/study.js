@@ -1,5 +1,6 @@
 /** pre-definitions here: ***/
 
+@ffamily_treb: 'Trebuchet MS', Arial, sans-serif;
 @blue_color: #00B7FF;
 @orange_color: #ff4800;
 @bg_color: #dddddd;
@@ -9,6 +10,11 @@
 /****************************/
 
 /** actual css here: ***/
+
+*:focus,
+*:active {
+  outline: none;
+}
 
 body {
   padding: 50px;
@@ -39,6 +45,7 @@ h1.app-name {
   margin-top: 3px;
   margin-bottom: 1ex;
   color: #555555;
+  font-family: @ffamily_treb;
   text-shadow: 1px 1px 10px #888888;
 }
 
@@ -96,11 +103,11 @@ ul#stack-listing {
 }
 
 #stack-listing li {
-  width: 29%;
+  width: 28%;
   height: 100%;
   list-style-type: none;
   float: left;
-  outline: 1px solid @border_color;
+  border: 1px solid @border_color;
   padding: 2% 1% 2% 1%;
   margin: 1%;
   font-style: italic;
@@ -109,9 +116,14 @@ ul#stack-listing {
 }
 
 #stack-listing li:hover {
-  outline: 1px solid @blue_color;
+  border: 1px solid @blue_color;
   cursor: pointer;
   box-shadow: .5ex .75ex 2ex @shadow_color_hover;
+}
+
+#stack-listing li:active,
+#stack-listing li:focus {
+  border-color: @orange_color;
 }
 
 #stack-listing li a {
@@ -125,6 +137,7 @@ ul#stack-listing {
 #stack-listing li a .stack-name {
   font-size: 1.75em;
   font-style: inherit;
+  font-family: @ffamily_treb;
   font-weight: bold;
   clear: both;
   display: block;
