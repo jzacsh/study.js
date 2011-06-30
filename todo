@@ -5,8 +5,8 @@
     - HTTP POST/DELETE instead of redundant /[url]/[path]/
     - make sure solution exists for:
     (note: ":re: /other-url/" means a URL is redirected to from /other-url/)
-        - /
-            - Simple app intro; teaser at top: list available stacks of flash cards.
+        x /
+            x Simple app intro; teaser at top: list available stacks of flash cards.
         - /stack/new
             x :re: /stack/
             - Create a new stack of flash cards.
