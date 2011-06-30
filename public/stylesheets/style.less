@@ -4,6 +4,7 @@
 
 /** pre-definitions here: ***/
 @ffamily_treb: 'Trebuchet MS', Arial, sans-serif;
+@txt_color: #444444;
 @blue_color: #00B7FF;
 @orange_color: #ff4800;
 @bg_color: #dddddd;
@@ -25,14 +26,14 @@ body {
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   width: 600px;
   margin: 0 auto 0 auto;
-  color: #444444;
+  color: @txt_color;
 }
 
 a {
   color: @blue_color;
 }
 
-h2 {
+h1, h2, h3, h4, h5, h6 {
   padding-left: 1em;
   color: #888888;
 }
@@ -47,6 +48,7 @@ h1.app-name {
   font-size: 6em;
   margin-top: 3px;
   margin-bottom: 1ex;
+  padding-left: 0;
   color: #555555;
   font-family: @ffamily_treb;
   text-shadow: none;
