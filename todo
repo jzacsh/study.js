@@ -51,6 +51,11 @@
     - educational algorithm to help you learn what you're having trouble with.
 
 [advanced]
+- before putting this live somewhere, harden:
+  - mongoddb
+    - http://serverfault.com/questions/237762/how-to-make-a-secure-mongodb-server
+    - http://www.mongodb.org/display/DOCS/Security+and+Authentication
+  - node.js (look this up
 - consider jquery-mobile lib to handle transition between cards and loading of
   their URLs
 - utilize html5 LocalStorage APIs
