@@ -61,6 +61,7 @@
 - utilize html5 LocalStorage APIs
     - allow offline use of entire dataset
     - allow offline editing; re-syncing on re-connection
+- modify schema and add functionality for a picture on one size of flash card
 
 [final]
 - get a designer to come up with something beatufiul
