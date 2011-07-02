@@ -4,7 +4,7 @@
  */
 
 var express = require('express');
-var db = require('./db'); //@TODO: use an actual database!
+var db = require('lib/db'); //@TODO: use an actual database!
 
 var app = module.exports = express.createServer();
 
