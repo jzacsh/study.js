@@ -1,6 +1,5 @@
 var db = require('../lib/db');
 var assert = require('assert');
-var should = require('should');
 
 /**
  * This is a throw-away test just to get used to TDD. The methods of my db.js
