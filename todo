@@ -2,7 +2,16 @@
 - use actual storage, specifically mongodb
     x remember a data field is needed to count correct/incorrect
     - pick a schema, run by one friend. probably option 1.
-    - implement schema :)
+    - implement with mongoose: http://www.10gen.com/presentation/mongosf2011/nodejs
+      - typical actions taken (stored procedures-ish?): virtuals
+        - Schema.virtual, see: get() and set()
+      - do nested documents have any negative impact? if not:
+        - use nested document for: score: { right: 0, wrong: 0 };
+      - index on "stack-name"
+          - index: true option to a given proper
+          - compound index: directly on schema, schema.index({field1: 1, field2: 1});
+      - may play with pre/post method of schema, eg.: for 'save', 'delete'
+      - try to play with chained "named scopes" (see video: 30:00 )
 - convert all icons to monotone-black only (eg.: raphaeljs free icons)
   - sprite all icons together
 - put "fork me" at top-right of index page; github-inspired
