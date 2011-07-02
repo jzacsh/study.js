@@ -27,6 +27,8 @@
         - /stack/new
             x :re: /stack/
             - Create a new stack of flash cards.
+              - see form developement with formidable:
+                https://github.com/felixge/node-formidable
         - /stack/[name]
             - Show contents of a stack, named [name]
         - /stack/[name]/edit
@@ -44,7 +46,6 @@
 
 - port css to sass, from less
 - port templating to haml, from jade
-- form APIs with node.js
 - see what can take from middleware screencast
   ( http://www.screenr.com/elL )
 - add new algorithm; api: /stack/:name/{next,previous}
