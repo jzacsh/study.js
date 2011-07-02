@@ -16,7 +16,12 @@ var get = function(obj, key, val) {
   return false;
 };
 
-
+// CURRENTLY USING OPTION 2: //@TODO: probably pick optino 1 from below
+//
+// cards is a *collection* of  *documents* representing each card.
+//
+// Each document has its respective stack's info _inside_ the card. (pros/cons?
+// will this make it difficult to query on stack attributes?)
 var stacks = [
   {
     name: 'history',
@@ -24,32 +29,18 @@ var stacks = [
     cards: [
       {
         front: 'Who was the first president?',
-        back: 'George Washington'
+        back: 'George Washington',
+        right: 0,
+        wrong: 3
       },
       {
-        front: 'What year was the decleration of independence.',
+        front: 'what year was the decleration of independence.',
         back: '1776'
-      }
-    ]
-  },
-  {
-    name: 'science',
-    info: 'Periodic Table of Elements',
-    cards: [
-      {
-        front: 'what is "H"?',
-        back: 'Hydrogen'
+        right: 4,
+        wrong: 0
       },
-      {
-        front: 'what is "AU"?',
-        back: 'Gold'
-      },
-      {
-        front: 'what is "CO"?',
-        back: 'Cobalt'
-      }
     ]
-  },
+  }
   {
     name: 'italian',
     info: 'Foreign language - course 1',
