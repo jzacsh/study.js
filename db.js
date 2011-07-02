@@ -40,7 +40,7 @@ var stacks = [
         wrong: 0
       },
     ]
-  }
+  },
   {
     name: 'italian',
     info: 'Foreign language - course 1',
