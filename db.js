@@ -47,15 +47,21 @@ var stacks = [
     cards: [
       {
         front: 'la mia ragattsa',
-        back: 'my girlfriend'
+        back: 'my girlfriend',
+        right: 1,
+        wrong: 0
       },
       {
         front: 'io oh makine rossa',
-        back: 'I have a red car.'
+        back: 'I have a red car.',
+        right: 0,
+        wrong: 0
       },
       {
         front: 'io oh andare in Italia',
-        back: 'I want to go to Italy.'
+        back: 'I want to go to Italy.',
+        right: 0,
+        wrong: 1
       }
     ]
   }
