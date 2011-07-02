@@ -35,7 +35,7 @@ var stacks = [
       },
       {
         front: 'what year was the decleration of independence.',
-        back: '1776'
+        back: '1776',
         right: 4,
         wrong: 0
       },
