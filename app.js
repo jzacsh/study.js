@@ -4,6 +4,9 @@
  */
 
 var express = require('express');
+var util = require('util');
+var url = require('url');
+var study = require('./lib/study');
 var db = require('./lib/db'); //@TODO: use an actual database!
 
 var app = module.exports = express.createServer();
@@ -62,45 +65,11 @@ app.set('head', {
   ]
 });
 
-//custom namespace
-var Study = {
-  add_cssjs: function(req, fType, file) {
-    if (false || (fType !== 'scripts' &&
-        fType !== 'styles')) {
-      return false;
-    }
-
-    var _default = function () {
-      var _head = { scripts: [], styles: []};
-
-      _head[fType].push(file);
-      return _head;
-    };
-
-    //actual work
-    if ('head' in req) {
-      if ('scripts' in req.head &&
-        'styles' in req.head) {
-        //overwrite the old
-        req.head[fType].push(file);
-      }
-      else {
-        //we have a malformed object
-        req.head = _default();
-      }
-    }
-    else {
-      //this is our first run
-      req.head = _default();
-    }
-  },
-};
-
 // Routes
 
 app.get('/', function(req, res){
-  Study.add_cssjs(req, 'scripts', 'site-ui.js');
-  Study.add_cssjs(req, 'styles', 'index.css');
+  study.add_cssjs(req, 'scripts', 'site-ui.js');
+  study.add_cssjs(req, 'styles', 'index.css');
 
   res.render('index', {
     title: 'study.js',
@@ -111,10 +80,8 @@ app.get('/', function(req, res){
 //@TODO: use middleware to load cards and/or stack for common URLs
 // eg.: learn about middleware: http://www.screenr.com/elL
 
-//redirect
-app.get('/stack', function(req, res) { res.redirect('/stack/new') });
-
 //@TODO: learn form handling!
+app.get('/stack', function(req, res) { res.redirect('/stack/new') });
 app.get('/stack/new', function(req, res) {
   res.render('stack', {
     title: 'Create a new stack of Flash Cards',
@@ -138,8 +105,9 @@ app.get('/stack/:name', function(req, res) {
 
 //redirect
 app.get('/stack/:name/card', function(req, res) {
-  var stack_name = db.get(db.stacks, 'name', req.params.name).name;
-  res.redirect('/stack/' + stack_name + '/card/new');
+  var direction = study.redirectIntact(req);
+  res.redirect(url.parse(req.url).pathname
+    + '/new' + direction.search + direction.hash);
 });
 
 //@TODO: learn form handling!
