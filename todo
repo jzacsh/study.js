@@ -24,6 +24,11 @@
     (note: ":re: /other-url/" means a URL is redirected to from /other-url/)
         x /
             x Simple app intro; teaser at top: list available stacks of flash cards.
+        - /export/xml
+            - :re: /export/
+            - Provide XML export of all stacks and their data
+        - /export/json
+            - Provide JSON export of all stacks and their data
         - /stack/new
             x :re: /stack/
             - Create a new stack of flash cards.
@@ -31,6 +36,11 @@
                 https://github.com/felixge/node-formidable
         - /stack/[name]
             - Show contents of a stack, named [name]
+        - /stack/[name]/export/xml
+            - :re: /stack/[name]/export
+            - Provide XML export of [name] stack and its data
+        - /stack/[name]/export/json
+            - Provide JSON export of [name] stack and its data
         - /stack/[name]/edit
             - Edit (re-order, show edit-links to) flash cards in stack [name].
         - /stack/[name]/study
