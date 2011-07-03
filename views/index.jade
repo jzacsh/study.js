@@ -53,51 +53,51 @@ p
 dl.tech
      dt /
      dd Simple app intro; teaser at top: list available stacks of flash cards.
-
+  
      dt /export/xml
      dd
        | :re: /export/<br />
        |  Provide XML export of all stacks and their data
-
+  
      dt /export/json
      dd Provide JSON export of all stacks and their data
-
+  
      dt /stack/new
      dd
        | :re: /stack/<br />
        | Create a new stack of flash cards.
      dt /stack/[name]
      dd Show contents of a stack, named [name]
-
+  
      dt /stack/[name]/export/xml
      dd
        | :re: /stack/[name]/export<br />
        | Provide XML export of [name] stack and its data
-
+  
      dt /stack/[name]/export/json
      dd Provide JSON export of [name] stack and its data
-
-     dt /stack/[name]/card/[id]/delete
-     dd Delete flash card number [id] in stack [name].
-
+  
      dt /stack/[name]/edit
      dd Edit (re-order, show edit-links to) flash cards in stack [name].
-
+  
+     dt /stack/[name]/delete
+     dd Delete the entire [name] stack of flash cards.
+  
      dt /stack/[name]/study
      dd
        | Review cards with study algorithms to teach you and keep track
        | of what you do/don't seem to know.
-
+  
      dt /stack/[name]/card/new
      dd
        | :re: /stack/[name]/card<br />
        | Create a new flash card on the stack [name].
      dt /stack/[name]/card/[id]
      dd Show contents of flash card number [id] in stack [name].
-
+  
      dt /stack/[name]/card/[id]/edit
      dd Edit contents of flash card number [id] in stack [name].
-
+  
      dt /stack/[name]/card/[id]/delete
      dd Delete flash card number [id] in stack [name].
 
