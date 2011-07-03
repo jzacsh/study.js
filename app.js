@@ -81,7 +81,8 @@ app.get('/', function(req, res){
 // eg.: learn about middleware: http://www.screenr.com/elL
 
 //@TODO: learn form handling!
-app.get('/stack', function(req, res) { res.redirect('/stack/new') });
+//redirect [ url + /new ]
+app.get('/stack', function(req, res) { study.appendPath(req, res, '/new') });
 app.get('/stack/new', function(req, res) {
   res.render('stack', {
     title: 'Create a new stack of Flash Cards',
@@ -103,12 +104,9 @@ app.get('/stack/:name', function(req, res) {
   }
 });
 
-//redirect
-app.get('/stack/:name/card', function(req, res) {
-  var direction = study.redirectIntact(req);
-  res.redirect(url.parse(req.url).pathname
-    + '/new' + direction.search + direction.hash);
-});
+//redirect [ url + /new ]
+app.get('/stack/:name/card',
+  function(req, res) { study.appendPath(req, res, '/new') });
 
 //@TODO: learn form handling!
 app.get('/stack/:name/card/new', function(req, res) {
