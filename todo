@@ -41,6 +41,8 @@
             - Provide XML export of [name] stack and its data
         - /stack/[name]/export/json
             - Provide JSON export of [name] stack and its data
+        - /stack/[name]/delete
+            - Delete the entire [name] stack of flash cards.
         - /stack/[name]/edit
             - Edit (re-order, show edit-links to) flash cards in stack [name].
         - /stack/[name]/study
@@ -53,6 +55,8 @@
             - Show contents of flash card number [id] in stack [name].
         - /stack/[name]/card/[id]/edit
             - Edit contents of flash card number [id] in stack [name].
+        - /stack/[name]/card/[id]/delete
+            - Delete flash card number [id] in stack [name].
 
 - port css to sass, from less
 - port templating to haml, from jade
