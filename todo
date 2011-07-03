@@ -25,7 +25,7 @@
         x /
             x Simple app intro; teaser at top: list available stacks of flash cards.
         - /export/xml
-            - :re: /export/
+            x :re: /export/
             - Provide XML export of all stacks and their data
         - /export/json
             - Provide JSON export of all stacks and their data
@@ -37,7 +37,7 @@
         - /stack/[name]
             - Show contents of a stack, named [name]
         - /stack/[name]/export/xml
-            - :re: /stack/[name]/export
+            x :re: /stack/[name]/export
             - Provide XML export of [name] stack and its data
         - /stack/[name]/export/json
             - Provide JSON export of [name] stack and its data

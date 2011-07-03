@@ -90,6 +90,14 @@ app.get('/stack/new', function(req, res) {
   });
 });
 
+app.get('/export', function(req, res) { study.appendPath(req, res, '/xml') });
+app.get('/export/xml', function(req, res) {
+  res.send('FPO: export/xml response here');
+});
+app.get('/export/json', function(req, res) {
+  res.send('FPO: export/JSON response here');
+});
+
 app.get('/stack/:name', function(req, res) {
   var stack = db.get(db.stacks, 'name', req.params.name);
   if (stack) {
@@ -102,6 +110,15 @@ app.get('/stack/:name', function(req, res) {
   else {
     res.send('No stack named "' + req.params.name + '"!', 404);
   }
+});
+
+app.get('/stack/:name/export',
+  function(req, res) { study.appendPath(req, res, '/xml') });
+app.get('/stack/:name/export/xml', function(req, res) {
+  res.send('FPO: /stack/:name/export/xml response here');
+});
+app.get('/stack/:name/export/json', function(req, res) {
+  res.send('FPO: /stack/:name/export/JSON response here');
 });
 
 //redirect [ url + /new ]
