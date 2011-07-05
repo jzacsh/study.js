@@ -97,6 +97,10 @@
     - '' "incorrect" '' (eg.: RED colors)
 - implement designer's specs
 
+[future]
+- see if you can rewrite path/API structures:
+  http://blog.steveklabnik.com/2011/07/03/nobody-understands-rest-or-http.html
+
 ###############################################################################
 
 x fix implementation of partials
