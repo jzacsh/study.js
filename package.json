@@ -1,6 +1,12 @@
 {
-    "name": "application-name"
+    "name": "study"
+  , "description": "A simple flashcard web app to help you study."
+  , "author": "Jonathan Zacsh <jzacsh@gmail.com>"
   , "version": "0.0.1"
+  , "repository": {
+      "type": "git",
+      "url": "git://jzacsh.com/foss/studyjs.git"
+    }
   , "scripts": {
       "test": "expresso tests/*.test.js"
     }
