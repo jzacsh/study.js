@@ -96,6 +96,8 @@
     - make getting "correct" something visually pleasing (eg.: GREEN colors)
     - '' "incorrect" '' (eg.: RED colors)
 - implement designer's specs
+- utilize ready.js for deploy on pre-commit hooks:
+  https://github.com/dsimard/ready.js
 
 [future]
 - see if you can rewrite path/API structures:
