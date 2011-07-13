@@ -24,6 +24,12 @@ p
  | <a href="/stack/">create a new stack</a>.
 
 ul#stack-listing
+  li
+   | <a href="/stack/new" title="create new stack">
+   | <span class="note quantity">(+)</span>
+   |<span class="stack-name">New</span>
+   |Create a new stack of cards.
+   | </a>
   - each stack in stacks
     - var qty=stack.cards.length
     li
