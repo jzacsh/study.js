@@ -7,6 +7,7 @@ var express = require('express');
 var util = require('util');
 var url = require('url');
 var study = require('./lib/study');
+var routes = require('./lib/routes');
 var db = require('./lib/db'); //@TODO: use an actual database!
 
 var app = module.exports = express.createServer();

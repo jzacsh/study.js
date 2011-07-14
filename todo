@@ -1,4 +1,7 @@
 [basics]
+- replace css/js inclusion with proper, *SEPERATE* jade "layouts" for each page.
+- move all router callbacks to routes.js and re-use routes for most redirect
+  situations
 - use actual storage, specifically mongodb
     x remember a data field is needed to count correct/incorrect
     - pick a schema, run by one friend. probably option 1.
