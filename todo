@@ -1,6 +1,6 @@
 [basics]
 - replace css/js inclusion with proper, *SEPERATE* jade "layouts" for each page.
-- move all router callbacks to routes.js and re-use routes for most redirect
+x move all router callbacks to routes.js and re-use routes for most redirect
   situations
 - use new routes object to simply re-utilize a route for different requests,
   instead of redirecting to other routes.
