@@ -68,85 +68,30 @@ app.set('head', {
 
 // Routes
 
-app.get('/', function(req, res){
-  study.add_cssjs(req, 'scripts', 'site-ui.js');
-  study.add_cssjs(req, 'styles', 'index.css');
-
-  res.render('index', {
-    title: 'study.js',
-    stacks: db.stacks,
-  });
-});
+app.get('/', routes.get['/']);
 
 //@TODO: use middleware to load cards and/or stack for common URLs
 // eg.: learn about middleware: http://www.screenr.com/elL
 
 //@TODO: learn form handling!
 //redirect [ url + /new ]
-app.get('/stack', function(req, res) { study.appendPath(req, res, '/new') });
-app.get('/stack/new', function(req, res) {
-  res.render('stack', {
-    title: 'Create a new stack of Flash Cards',
-    stacks: db.stacks,
-  });
-});
+app.get('/stack/new', routes.get['/stack/new']);
+app.get('/stack', routes.get['/stack/new']);
 
-app.get('/export', function(req, res) { study.appendPath(req, res, '/xml') });
-app.get('/export/xml', function(req, res) {
-  res.send('FPO: export/xml response here');
-});
-app.get('/export/json', function(req, res) {
-  res.send('FPO: export/JSON response here');
-});
+app.get('/export/xml', routes.get['/export/xml']);
+app.get('/export/json', routes.get['/export/json']);
+app.get('/export', routes.get['/export/xml']);
 
-app.get('/stack/:name', function(req, res) {
-  var stack = db.get(db.stacks, 'name', req.params.name);
-  if (stack) {
-    res.render('stack/stack', {
-      title: 'Stack of ' + req.params.name.charAt(0).toUpperCase() + req.params.name.slice(1) + ' cards',
-      name: stack.name, //@TODO: figure out how to nest 2-deep in a partial!!
-      cards: stack.cards,
-    });
-  }
-  else {
-    res.send('No stack named "' + req.params.name + '"!', 404);
-  }
-});
+app.get('/stack/:name', routes.get['/stack/:name']);
 
-app.get('/stack/:name/export',
-  function(req, res) { study.appendPath(req, res, '/xml') });
-app.get('/stack/:name/export/xml', function(req, res) {
-  res.send('FPO: /stack/:name/export/xml response here');
-});
-app.get('/stack/:name/export/json', function(req, res) {
-  res.send('FPO: /stack/:name/export/JSON response here');
-});
+app.get('/stack/:name/export/xml', routes.get['/stack/:name/export/xml']);
+app.get('/stack/:name/export/json', routes.get['/stack/:name/export/json']);
+app.get('/stack/:name/export', routes.get['/stack/:name/export/xml']);
 
-//redirect [ url + /new ]
-app.get('/stack/:name/card',
-  function(req, res) { study.appendPath(req, res, '/new') });
+app.get('/stack/:name/card/new', routes.get['/stack/:name/card/new']);
+app.get('/stack/:name/card', routes.get['/stack/:name/card/new']);
 
-//@TODO: learn form handling!
-app.get('/stack/:name/card/new', function(req, res) {
-  var stack_name = db.get(db.stacks, 'name', req.params.name).name;
-  res.render('card', {
-    title: 'Create a new flash card in the "' + stack_name + '" stack',
-    stack_name: stack_name,
-  });
-});
-
-app.get('/stack/:name/card/:id', function(req, res) {
-  var found_card = db.get(db.stacks, 'name', req.params.name).cards[req.params.id];
-  if (found_card) {
-    res.render('card/card', { //@TODO: this uses card.jade?
-      title: 'Flash card number: ' + req.params.id,
-      card: found_card, //@TODO: search this stack for something by the name of req.params.name
-    });
-  }
-  else {
-    res.send('No card #"' + req.params.id + '"!', 404);
-  }
-});
+app.get('/stack/:name/card/:id', routes.get['/stack/:name/card/:id']);
 
 app.listen(3000);
 console.log("Express server listening on port %d", app.address().port);
