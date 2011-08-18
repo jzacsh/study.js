@@ -6,8 +6,11 @@ x use new routes object to simply re-utilize a route for different requests,
   instead of redirecting to other routes.
 - use actual storage, specifically mongodb
     x remember a data field is needed to count correct/incorrect
-    - pick a schema, run by one friend. probably option 1.
+    x pick a schema, run by one friend. probably option 1.
     - implement with mongoose: http://www.10gen.com/presentation/mongosf2011/nodejs
+      x start with basics
+        - rewrite all calls to db object in codebase to align with new
+          *mongoose* db Model object.
       - typical actions taken (stored procedures-ish?): virtuals
         - Schema.virtual, see: get() and set()
       - do nested documents have any negative impact? if not:
