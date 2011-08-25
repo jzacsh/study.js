@@ -7,7 +7,7 @@ x use new routes object to simply re-utilize a route for different requests,
 - use actual storage, specifically mongodb
     x remember a data field is needed to count correct/incorrect
     x pick a schema, run by one friend. probably option 1.
-    - implement with mongodb native module
+    - implement with mongoose v2.0: http://www.10gen.com/presentation/mongosf2011/nodejs
       x start with basics
         - rewrite all calls to db object in codebase to align with new
           *mongoose* db Model object.

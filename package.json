@@ -15,7 +15,7 @@
       "express": "2.3.11"
     , "less": ">= 0.0.1"
     , "jade": ">= 0.0.1"
-    , "mongoose": ">= 1.5.0"
+    , "mongoose": ">= 2"
   }
   , "devDependencies": {
       "expresso": ">= 0.7.9"
