@@ -92,9 +92,9 @@ app.get('/stack/:name/export/json', routes.get['/stack/:name/export/json']);
 app.get('/stack/:name/export', routes.get['/stack/:name/export/xml']);
 
 app.get('/stack/:name/card/new', routes.get['/stack/:name/card/new']);
-app.get('/stack/:name/card', routes.get['/stack/:name/card/new']);
+app.get('/stack/:name/card',     routes.get['/stack/:name/card/new']);
 
-app.get('/stack/:name/card/:id', routes.get['/stack/:name/card/:id']);
+app.get('/card/:id', routes.get['/card/:id']);
 
 app.listen(3000);
 console.log("Express server listening on port %d", app.address().port);

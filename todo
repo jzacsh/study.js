@@ -70,13 +70,13 @@ x use new routes object to simply re-utilize a route for different requests,
             x :re: /stack/[name]/card
             - Create a new flash card on the stack [name].
 
-        - /stack/[name]/card/[id]
+        - /card/[id]
             - Show contents of flash card number [id] in stack [name].
 
-        - /stack/[name]/card/[id]/edit
+        - /card/[id]/edit
             - Edit contents of flash card number [id] in stack [name].
 
-        - /stack/[name]/card/[id]/delete
+        - /card/[id]/delete
             - Delete flash card number [id] in stack [name].
 
 - port css to sass, from less
