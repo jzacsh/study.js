@@ -31,13 +31,12 @@ ul#stack-listing
    |Create a new stack of cards.
    | </a>
   - each stack in stacks
-    - var qty=stack.cards.length
     li
-     | <a title="#{qty} #{stack.name} cards"
-     | href="/stack/#{stack.name}">
-     | <span class="note quantity">(#{qty})</span>
-     | <span class="stack-name">#{stack.name}:</span>
-     | #{stack.info}
+     | <a title="#{stack.qty} #{stack._id} cards"
+     | href="/stack/#{stack._id}">
+     | <span class="note quantity">(#{stack.qty})</span>
+     | <span class="stack-name">#{stack._id}:</span>
+     | #{stack.description}
      | </a>
    <div class="clearfix"></div>
 
