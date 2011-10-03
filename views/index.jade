@@ -32,10 +32,10 @@ ul#stack-listing
    | </a>
   - each stack in stacks
     li
-     | <a title="#{stack.qty} '#{stack._id}' cards"
-     | href="/stack/#{stack}">
-     | <span class="note quantity"><!--(#{stack.qty})--></span>
-     | <span class="stack-name">#{stack}</span>
+     |  <!-- title="#{stack.qty} '#{stack._id}' cards" -->
+     | <a href="/stack/#{stack}">
+     |   <span class="note quantity"><!--(#{stack.qty})--></span>
+     |   <span class="stack-name">#{stack}</span>
      | </a>
    <div class="clearfix"></div>
 
