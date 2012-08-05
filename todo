@@ -1,3 +1,6 @@
+Abandoned. Was fun playing with buzzwordy technologies, wasn't a very exciting
+project, though.
+
 [basics]
 - replace css/js inclusion with proper, *SEPERATE* jade "layouts" for each page.
 x move all router callbacks to routes.js and re-use routes for most redirect
@@ -25,7 +28,7 @@ x use new routes object to simply re-utilize a route for different requests,
 - put "fork me" at top-right of index page; github-inspired
   - link this to code.jzacsh.com; use custom icon
 - restructure/plan APIs
-    spoke with djen;
+    spoke with friend;
     keep original paths and add in /edit/ new/ appendixes to each path-type.
     - HTTP POST/DELETE instead of redundant /[url]/[path]/
     - make sure solution exists for:
